@@ -1,0 +1,77 @@
+<style>
+    .loginbox {
+        width: 520px;
+        display: flex;
+        height: 310px;
+        background: rgb(255, 255, 255);
+        border-radius: 10px;
+        color: rgb(0, 0, 0);
+        top: 47%;
+        left: 33%;
+        position: absolute;
+        transform: translate(-50%,-50%);
+        box-sizing: border-box;
+        padding: 70px 80px;
+        box-shadow: 0 0 2px 0 rgb(0, 0, 0);
+    }
+    .loginbox button{
+    border: none;
+    border-radius: 20px;
+    background-color: #475fa1;
+    color: white;
+    width: 70px;
+    height: 25px;
+    font-weight: bold;
+    font-family: calibri;
+    font-size: 15px;
+}
+
+.loginbox button :hover {
+    cursor: pointer;
+    color: #000;
+    background: #ffc107;
+    box-shadow: 0 0 50px 0 rgb(5, 5, 5);
+   
+}
+
+.loginbox button:hover {
+    cursor: pointer;
+    color: #000;
+    background: #ffc107;
+    box-shadow: 0 0 5px 0 rgb(5, 5, 5);
+}
+.loginbox input{
+    width: 90%;
+    margin-bottom: 20px;
+}
+.loginbox input[type="text"], input[type="password"] {
+    border: none;
+    border-bottom: 1px solid rgb(9, 145, 183);
+    background: transparent;
+    outline: none;
+    height: 30px;
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    font-family: calibri;
+}
+</style>
+<div class="loginbox">
+    <form onsubmit="myfunc(event)">
+        <p>ID</p>
+        <input type="text" placeholder="User ID" id="id_name" required>
+        <p>Password</p>
+        <input type="password" placeholder="password" id="enter_pass" required>
+        <button type="submit" value="submit">Submit</button>
+        <button type="reset">Reset</button>
+</div>
+<script type="text/javascript">
+    function myfunc(event) {
+        event.preventDefault();
+
+        var id_name = document.getElementById("id_name").value;
+        var enter_pass = document.getElementById("enter_pass").value;
+
+        localStorage.setItem('ls_id_name', id_name);
+        localStorage.setItem('ls_enter_pass', enter_pass);
+    }
+</script>
